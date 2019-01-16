@@ -104,9 +104,10 @@ nav h1 a {
   background-color: #ccc;
 }
 /* ====================== Restaurant Filtering ====================== */
+/* change height to 100% to correct filter downdrop item boxes  */
 .filter-options {
   width: 100%;
-  height: 50px;
+  height: 100%;
   background-color: #3397DB;
   align-items: center;
 }
@@ -136,6 +137,11 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
+/* responsive: add flex box wrap, direction as row and align 'left' wrap.*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -145,7 +151,9 @@ nav h1 a {
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  /* responsive: max width 320, model after iphon 5 smallest screen */
+  max-width: 320px;
+  width: 100%;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -154,6 +162,7 @@ nav h1 a {
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
+  overflow: hidden;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -258,7 +267,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -272,4 +281,65 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/****************************************
+/* media query for different screen sizes
+*****************************************/
+@media screen and (min-width: 0px) {
+   #reviews-list li {
+    width: 100%;
+  }
+}
+
+/* iphone 5 */
+@media screen and (min-width: 320px) {
+   #reviews-list li {
+    width: 45%;
+  }
+}
+/*iphone 6, x */
+@media screen and (min-width: 375px) {
+  #reviews-list li {
+    width: 50%;
+  }
+}
+
+/*iphone 6,7,8 plus */
+@media screen and (min-width: 414px) {
+  #reviews-list li {
+    width: 55%;
+  }
+}
+
+/*ipad mini and ipad */
+@media screen and (min-width: 768px) {
+  #reviews-list li {
+    width: 75%;
+  }
+}
+
+/*ipad pro or 720p */
+@media screen and (min-width: 1024px) {
+  #reviews-list li {
+    width: 80%;
+  }
+}
+
+/* restaurant pic responsive */
+@media screen and (max-width: 768px) {
+  #restaurant-container > img {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #restaurant-container > img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #restaurant-container > img {
+    width: 75%;
+  }
 }
