@@ -1,8 +1,25 @@
-let restaurants,
-  neighborhoods,
-  cuisines
-var newMap
-var markers = []
+let restaurants,neighborhoods, cuisines;
+var newMap,markers = [];
+
+// function to handle registration of SW
+function registerSvcWorker() {
+  if (!navigator.serviceWorker) return;
+  
+  navigator.serviceWorker
+    .register('/sw.js')
+    .then(function(reg) {
+      if (!navigator.serviceWorker.controller)  {
+        console.log("Service Worker registration succeed..")
+        return;
+      }
+    })
+    .catch(function() {
+      console.log("Service Worker registration failed...");
+    })
+};
+
+registerSvcWorker();
+
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
