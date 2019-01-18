@@ -16,21 +16,24 @@
 <body>
   <header>
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a aria-label="Home" tabindex="-1" href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
+  <a href="#filters" class="skip-link">Skip Home to Options</a>
+
   <main id="maincontent">
-    <section id="map-container">
+    <!-- Accessibility role definition : https://www.w3.org/TR/wai-aria-1.1/#landmarks -->
+    <section id="map-container" role='application' aria-label="Maps showing each restaurant location">
       <div id="map"></div>
     </section>
     <section>
-      <div class="filter-options">
+      <div id="filters" class="filter-options" aria-label="Filters for options">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <select tabindex="1" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Filter by neighborhoods">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select tabindex="1" id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Filter by cuisines">
           <option value="all">All Cuisines</option>
         </select>
       </div>
