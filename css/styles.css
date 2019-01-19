@@ -217,7 +217,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -289,61 +289,29 @@ nav h1 a {
 /****************************************
 /* media query for different screen sizes
 *****************************************/
-@media screen and (min-width: 0px) {
-   #reviews-list li {
+@media screen and (max-width: 420px) {
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filter-options > * {
+    flex: 1 0 60%;
+  }
+  .inside #map-container{
+    height: 320px;
+    position: relative;
+    width: 100%;
+  }
+  #breadcrumb{
     width: 100%;
   }
 }
 
-/* iphone 5 */
-@media screen and (min-width: 320px) {
-   #reviews-list li {
-    width: 45%;
-  }
-}
-/*iphone 6, x */
-@media screen and (min-width: 375px) {
-  #reviews-list li {
-    width: 50%;
-  }
-}
-
-/*iphone 6,7,8 plus */
-@media screen and (min-width: 414px) {
-  #reviews-list li {
-    width: 55%;
-  }
-}
-
-/*ipad mini and ipad */
-@media screen and (min-width: 768px) {
-  #reviews-list li {
-    width: 75%;
-  }
-}
-
-/*ipad pro or 720p */
-@media screen and (min-width: 1024px) {
-  #reviews-list li {
-    width: 80%;
-  }
-}
-
-/* restaurant pic responsive */
-@media screen and (max-width: 768px) {
-  #restaurant-container > img {
-    width: 85%;
-  }
-}
-@media screen and (max-width: 768px) {
-  #restaurant-container > img {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #restaurant-container > img {
-    width: 75%;
+@media screen and (max-width: 860px) {
+  .inside #map-container{
+    height: 520px;
+    position: relative;
+    width: 100%;
   }
 }
 
